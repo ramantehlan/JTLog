@@ -1,40 +1,12 @@
 /******************************* 
-*  This is to log the activites of app
+*  This is to log the activites of a web application
 *
 *  Date of Creation: 01-08-2018
 *  Creator: Raman Tehlan
 *******************************/
 
-/*******************************
- * 	Usage of this libarary; 
- * 
- * 	1. Setup file to use Jlog
- * 		- Import the library 	
- * 				import { J } from "LOCATION"
- * 		- Pass it in constructor parameter 
- * 				(public J:J)
- *		
- * 	2. Call the function to console log
- * 		- J.log(tag, msg, style);
- * 
- *******************************/
 
- /**
-  * Tag list:
-  * 
-  * default: normal log
-  * table: to print table
-  * warn: to print warning 
-  * info: to print information 
-  * start: to print the partition of a new program or this program
-  * call: to print if the function is called
-  * head: to print which file is opened right now 
-  */
-
-//
-// To perform http calls 
-//
-export class J { 
+export class JTLog { 
 
 	// To define if console log is allowed or not
 	allowLog: boolean = false;
@@ -64,6 +36,15 @@ export class J {
 			// Function space
 			
 				switch(tag){
+					case "table":
+						console.table("%c" + msg, this.table + style);
+					break;
+					case "warn":
+						console.warn("%cWarning: " + msg, this.warn + style);
+					break;
+					case "info":
+						console.info("%cInformation: " + msg, this.info + style);
+					break;
 					case "head":
 						console.log("%cFile: " + msg, this.head + style);
 					break;
