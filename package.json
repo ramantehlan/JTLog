@@ -1,6 +1,6 @@
 {
   "name": "logj",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Console Log Library For TypeScript",
   "main": "index.ts",
   "scripts": {

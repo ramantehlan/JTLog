@@ -5,9 +5,9 @@ It is a console Log Library For Typescript.
 ## Usage
 
 1. Setup file to use Jlog
- 		- Import the library 	
+	- Import the library 	
  				import { J } from "LOCATION"
- 		- Pass it in constructor parameter 
+ 	- Pass it in constructor parameter 
  				(public J:J)
 		
 2. Call the function to console log
