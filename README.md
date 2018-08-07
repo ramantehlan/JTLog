@@ -1,30 +1,30 @@
-# JLog
+# JTLog
 
-It is a console Log Library For Typescript.
+JavascriptTypescriptLog (JTLog) is Log library.
 
 ## Usage
 
-1. Setup file to use Jlog
-	- Import the library 	
- 				import { J } from "LOCATION"
- 	- Pass it in constructor parameter 
- 				(public J:J)
+```bash
+  npm i jtlog
+```
 		
-2. Call the function to console log
-  	- J.log(tag, msg, style);
   
 
 ## Tag List
 
-```
-  default: normal log
-  table: to print table
-  warn: to print warning 
-  info: to print information 
-  start: to print the partition of a new program or this program
-  call: to print if the function is called
-  head: to print which file is opened right now 
-``` 
+No | Name | Description|
+---|------|------------|
+1 | default | Normal log
+2 | table | Print table
+3 | warn | Print Warning 
+4 | info | Print Information 
+5 | start | Print Starting Heading
+6 | call | Print when a function is called
+7 | head | Print when a file is opened 
+ 
 
 ## Contribution
     Feel free to contribute.
+
+## Licence
+    ISC
