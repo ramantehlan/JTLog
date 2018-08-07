@@ -1,26 +1,27 @@
 {
-  "name": "logj",
+  "name": "jtlog",
   "version": "1.0.0",
-  "description": "Console Log Library For TypeScript",
+  "description": "JavascriptTypescriptLog (JTLog) is Log library.",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Not Set\""
+    "test": "echo \"Test Not Set\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ramantehlan/JLog.git"
+    "url": "git+https://github.com/ramantehlan/JTLog.git"
   },
   "keywords": [
-    "J",
-    "JLog",
+    "JT",
+    "JTLog",
     "Log",
     "Console",
-    "Debug"
+    "Typescript",
+    "Javascript"
   ],
   "author": "Raman Tehlan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ramantehlan/JLog/issues"
+    "url": "https://github.com/ramantehlan/JTLog/issues"
   },
-  "homepage": "https://github.com/ramantehlan/JLog#readme"
+  "homepage": "https://github.com/ramantehlan/JTLog#readme"
 }
