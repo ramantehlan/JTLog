@@ -1,6 +1,6 @@
 {
   "name": "jtlog",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "JavascriptTypescriptLog (JTLog) is Log library.",
   "main": "index.ts",
   "scripts": {
