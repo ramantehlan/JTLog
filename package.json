@@ -1,0 +1,26 @@
+{
+  "name": "logj",
+  "version": "0.0.1",
+  "description": "Console Log Library For TypeScript",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Not Set\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramantehlan/JLog.git"
+  },
+  "keywords": [
+    "J",
+    "JLog",
+    "Log",
+    "Console",
+    "Debug"
+  ],
+  "author": "Raman Tehlan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramantehlan/JLog/issues"
+  },
+  "homepage": "https://github.com/ramantehlan/JLog#readme"
+}
