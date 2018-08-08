@@ -1,5 +1,7 @@
 # JTLog
 
+[![Build Status](https://travis-ci.org/ramantehlan/JTLog.svg?branch=master)](https://travis-ci.org/ramantehlan/JTLog)
+
 JavascriptTypescriptLog (JTLog) is Log library.
 
 ## Usage
