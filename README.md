@@ -4,12 +4,28 @@
 
 JavascriptTypescriptLog (JTLog) is Log library.
 
+## Installation 
+
+```sh
+npm i jtlog --save
+```
 ## Usage
 
-```bash
-  npm i jtlog
+### Javascript
+
+```javascript
+var JT = require('jtlog');
+JT.log('start',"App started");
 ```
-		
+```sh
+Output should be 'Boys'
+```
+
+### TypeScript
+```typescript
+import { JTLog } from 'JTLog';
+JTLog.log("start", "App Started");
+```
   
 
 ## Tag List
