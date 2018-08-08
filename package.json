@@ -19,7 +19,8 @@
     "Debug",
     "error",
     "console",
-    "log"
+    "log",
+    "output"
   ],
   "author": "Raman Tehlan <ramantehlan@gmail.com>",
   "license": "ISC",
