@@ -1,27 +1,33 @@
 {
   "name": "jtlog",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "JavascriptTypescriptLog (JTLog) is Log library.",
-  "main": "index.ts",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "scripts": {
-    "test": "echo \"Test Not Set\""
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ramantehlan/JTLog.git"
   },
   "keywords": [
-    "JT",
     "JTLog",
     "Log",
-    "Console",
-    "Typescript",
-    "Javascript"
+    "JT",
+    "Debug",
+    "error",
+    "console",
+    "log"
   ],
-  "author": "Raman Tehlan",
+  "author": "Raman Tehlan <ramantehlan@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ramantehlan/JTLog/issues"
   },
-  "homepage": "https://github.com/ramantehlan/JTLog#readme"
+  "homepage": "https://github.com/ramantehlan/JTLog#readme",
+  "devDependencies": {
+    "typescript": "^3.0.1"
+  }
 }
