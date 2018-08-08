@@ -39,7 +39,11 @@ No | Name | Description|
 5 | start | Print Starting Heading
 6 | call | Print when a function is called
 7 | head | Print when a file is opened 
- 
+
+## Test 
+```sh
+npm run test
+```
 
 ## Contribution
     Feel free to contribute.
