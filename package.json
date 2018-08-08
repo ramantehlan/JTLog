@@ -2,7 +2,7 @@
   "name": "jtlog",
   "version": "1.0.2",
   "description": "JavascriptTypescriptLog (JTLog) is Log library.",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Test Not Set\""
   },
