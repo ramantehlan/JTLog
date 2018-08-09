@@ -1,7 +1,7 @@
 /******************************* 
 *  This is to log the activites of a web application
 *
-*  Date of Creation: 01-08-2018
+*  Date of Creation: 01-08-2018 \n
 *  Creator: Raman Tehlan
 *******************************/
 
@@ -25,13 +25,13 @@ export class JTLog {
 		this.allowLog = permission;
 	}
 
-	clear(): void{
+	public clear(): void{
 		console.clear();
 	}
 
 
 	// To push the log to console
-	log(tag: string, msg: any , style: string = ""): void{
+	public log(tag: string, msg: any , style: string = ""): void{
 		if(this.allowLog){
 			// Function space
 			
