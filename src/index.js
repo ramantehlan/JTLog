@@ -51,8 +51,14 @@ var JTLog = /** @class */ (function () {
     //
     // To change and set a new configuration value
     //
-    JTLog.prototype.setConfig = function (holder, value) {
-        this.config[holder] = value;
+    JTLog.prototype.setConfig = function (name, value) {
+        this.config[name] = value;
+    };
+    // 
+    // To get a value of configuration
+    // 
+    JTLog.prototype.getConfig = function (name) {
+        return this.config[name];
     };
     //
     // To clear the console log and the collected logs
@@ -126,7 +132,4 @@ exports.JTLog = JTLog;
         'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
         'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
         'timeStamp', 'trace', 'warn'
-
-
-
 */

@@ -21,7 +21,8 @@ export declare class JTLog {
     startBold: string;
     call: string;
     head: string;
-    setConfig(holder: string, value: any): void;
+    setConfig(name: string, value: any): void;
+    getConfig(name: string): any;
     clear(): void;
     log(tag: string, msg: any, style?: string): void;
     group(name: string, groupMsg: Group[]): void;
