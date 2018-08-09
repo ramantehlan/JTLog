@@ -14,13 +14,14 @@ export declare class JTLog {
     config: {
         [x: string]: any;
     };
-    default: string;
+    startBold: string;
     table: string;
+    default: string;
+    error: string;
     warn: string;
     info: string;
-    startBold: string;
     call: string;
-    head: string;
+    file: string;
     setConfig(name: string, value: any): void;
     getConfig(name: string): any;
     clear(): void;
