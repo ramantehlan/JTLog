@@ -142,7 +142,4 @@ export class JTLog {
         'exception', 'group', 'groupCollapsed', 'groupEnd', 'info', 'log',
         'markTimeline', 'profile', 'profileEnd', 'table', 'time', 'timeEnd',
 		'timeStamp', 'trace', 'warn'
-
-
-
 */
