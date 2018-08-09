@@ -62,11 +62,13 @@ No | Name | Type | Description |
 ---|------|------|-------------|
 1  | allowLog | `Boolean` | To decide if you wish to log or not
 2  | fileName | `String` | To set file name of current page we are on. 
- 
+3  | appName  | `String` | Name of app, it is set by user
+4  | appStartTime | `String` | Time when app started
+
 
 ## Tag List
 
-No | Tag | Description|
+No | Tag | Description3  
 ---|------|------------|
 1 | default | Normal log
 2 | table | Print table

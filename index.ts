@@ -35,18 +35,21 @@ export class JTLog {
 	// This is the configuration for JTLog
 	config: {[x: string]: any} = {
 		allowLog : true,
-		pageName : "Default"
+		pageName : "Default",
+		appName : null,
+		appStartTime: new Date().toLocaleString()
 	}
 
 
 	// Tags style for logs
-	default:string = "color:black; font-size:12px;";
+	startBold:string = "color:gray; font-size:10px;";
 	table:string = "color:green; font-size:11px;";
-	warn:string = "color:red; font-size:12px;";
-	info:string = "color:blue; font-size:12px;";
-	startBold:string = "color:gray; font-size:14px;font-weight:bold";
-	call:string = "color:green; font-size:10px;";
-	head:string = "color:blue; font-size:10px;";
+	default:string = "color:black; font-size:11px;";
+	error:string = "color:red;font-size:11px;";
+	warn:string = "color:orange; font-size:11px;";
+	info:string = "color:yellow; font-size:11px;";
+	call:string = "color:green; font-size:11px;";
+	file:string = "color:blue; font-size:11px;";
 
 	//
 	// To change and set a new configuration value
@@ -84,36 +87,42 @@ export class JTLog {
 						console.log("%c" + msg, this.default + style);
 					break;
 					case "warn":
-						console.warn("%cWarning: " + msg, this.warn + style);
+						console.warn("%cWarn: " + msg, this.warn + style);
 					break;
 					case "info":
-						console.info("%cInformation: " + msg, this.info + style);
+						console.info("%cInfo: " + msg, this.info + style);
 					break;
 					case "file":
-						console.log("%cFile: " + msg, this.head + style);
+						console.log("%cFile: " + msg, this.file + style);
 					break;
 					case "call":
-						console.log("%cCalled: " + msg, this.call + style);
+						console.log("%cCall: " + msg, this.call + style);
 					break;
 					case "start":
+ 						// To set app name
+ 						this.config['appName'] = msg;
+
+						// To store the logs for a group
 						let start: Group[] = [];
 						start.push({	
 										tag: "startBold" , 
-										msg: "%c" + "------------------------",
-										style: this.startBold + style
+										msg: "%c" + "------------------------------------",
+										style:  style
 								   });
-						start.push({
-										tag: "startBold" , 
-										msg: "%c" + msg,
-										style: this.startBold + style
-									})
 						start.push({	
 										tag: "startBold" , 
-										msg: "%c" + "------------------------",
-										style: this.startBold + style
-								   })
+										msg: "%cApp Name: " + msg + 
+											 "%cTime of Starting: " + this.config["appStartTime"]  
+										,
+										style:  style
+									});
+						start.push({	
+										tag: "startBold" , 
+										msg: "%c" + "-----------------------------------",
+										style: style
+								   });
 
-						this.group("Starting", start);
+						this.group("JTLog Started", start);
 					break;
 					case "startBold":
 						console.log("%c" + msg, this.startBold + style);
