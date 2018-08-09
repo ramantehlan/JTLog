@@ -14,8 +14,9 @@ npm i jtlog --save
 ### Javascript
 
 ```javascript
+// Include the module
 var JT = require('jtlog');
-JT.log('start',"App started");
+
 ```
 
 ### TypeScript
@@ -23,11 +24,49 @@ JT.log('start',"App started");
 import { JTLog } from 'jtlog';
 JTLog.log("start", "App Started");
 ```
-  
+
+### General
+```Typescript
+// To start the module 
+// appname will be replaced by your program/app name
+JT.start("appname");
+
+// To change configuration
+// setConfig(NAME, VALUE)
+// NAME: <string> List can be found in Configuration list
+// VALUE: <any> New value you wish to set
+JT.setConfig("allowLog",true);
+
+// To get configuration value
+JT.getConfig("allowLog"); // This will return true by default
+
+// To log something in console
+// log(TAG, MSG, STYLE)
+// TAG: <string> To tag the message | List can be found below
+// MSG: <any> you message, it can also be a object
+// STYLE: <string> <optional> very basic css style works
+JT.log('default',"App started", "color:black");
+
+//
+// We are using just one function to log, cause this will avoid error
+// In case you add wrong tag, this won't be a problem.
+//
+
+```
+
+> Note: JT is a module variable, It will be different for you, as you assign it.
+
+## Configuration List
+
+No | Name | Type | Description |
+---|------|------|-------------|
+1  | allowLog | `Boolean` | To decide if you wish to log or not
+2  | fileName | `String` | To set file name of current page we are on. 
+ 
 
 ## Tag List
 
-No | Name | Description|
+No | Tag | Description|
 ---|------|------------|
 1 | default | Normal log
 2 | table | Print table
