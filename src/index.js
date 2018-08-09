@@ -76,6 +76,9 @@ var JTLog = /** @class */ (function () {
                 case "table":
                     console.table("%c" + msg, this.table + style);
                     break;
+                case "default":
+                    console.log("%c" + msg, this.default + style);
+                    break;
                 case "warn":
                     console.warn("%cWarning: " + msg, this.warn + style);
                     break;
@@ -85,26 +88,30 @@ var JTLog = /** @class */ (function () {
                 case "file":
                     console.log("%cFile: " + msg, this.head + style);
                     break;
+                case "call":
+                    console.log("%cCalled: " + msg, this.call + style);
+                    break;
                 case "start":
                     var start = [];
                     start.push({
                         tag: "startBold",
                         msg: "%c" + "------------------------",
-                        style: style
+                        style: this.startBold + style
                     });
                     start.push({
                         tag: "startBold",
                         msg: "%c" + msg,
-                        style: style
+                        style: this.startBold + style
                     });
-                    start.push(start[0]);
+                    start.push({
+                        tag: "startBold",
+                        msg: "%c" + "------------------------",
+                        style: this.startBold + style
+                    });
                     this.group("Starting", start);
                     break;
                 case "startBold":
                     console.log("%c" + msg, this.startBold + style);
-                    break;
-                case "call":
-                    console.log("%cCalled: " + msg, this.call + style);
                     break;
                 default:
                     console.log('%c' + msg, this.default + style);
