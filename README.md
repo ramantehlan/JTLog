@@ -17,13 +17,10 @@ npm i jtlog --save
 var JT = require('jtlog');
 JT.log('start',"App started");
 ```
-```sh
-Output should be 'Boys'
-```
 
 ### TypeScript
 ```typescript
-import { JTLog } from 'JTLog';
+import { JTLog } from 'jtlog';
 JTLog.log("start", "App Started");
 ```
   
