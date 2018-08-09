@@ -87,17 +87,17 @@ var JTLog = /** @class */ (function () {
                     break;
                 case "start":
                     var start = [];
-                    start[0] = {
+                    start.push({
                         tag: "startBold",
                         msg: "%c" + "------------------------",
                         style: style
-                    };
-                    start[1] = {
+                    });
+                    start.push({
                         tag: "startBold",
                         msg: "%c" + msg,
                         style: style
-                    };
-                    start[2] = start[1];
+                    });
+                    start.push(start[0]);
                     this.group("Starting", start);
                     break;
                 case "startBold":
