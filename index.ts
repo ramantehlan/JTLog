@@ -91,17 +91,17 @@ export class JTLog {
 					break;
 					case "start":
 						let start: Group[] = [];
-						start[1] = {	
+						start[0] = {	
 										tag: "startBold" , 
 										msg: "%c" + "------------------------",
 										style: style
 								   }
-						start[2] = {
+						start[1] = {
 										tag: "startBold" , 
 										msg: "%c" + msg,
 										style: style
 									}
-						start[3] = start[1];
+						start[2] = start[1];
 
 						this.group("Starting", start);
 					break;
