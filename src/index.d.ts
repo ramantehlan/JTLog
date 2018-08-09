@@ -1,21 +1,29 @@
-/*******************************
-*  This is to log the activites of a web application
+/*******************************************************
+*  This module is to print, manage, and handle the console
+*  logs, it is originally designed for one page applications
 *
-*  Date of Creation: 01-08-2018 \n
+*  Date of Creation: 01-08-2018
 *  Creator: Raman Tehlan
-*******************************/
+*********************************************************/
+export declare class Group {
+    tag: string;
+    msg: any;
+    style: string;
+}
 export declare class JTLog {
-    allowLog: boolean;
-    pageName: string;
+    config: {
+        [x: string]: any;
+    };
     default: string;
     table: string;
     warn: string;
     info: string;
-    start: string;
+    startBold: string;
     call: string;
     head: string;
-    setAllowLog(permission: boolean): void;
+    setConfig(holder: string, value: any): void;
     clear(): void;
     log(tag: string, msg: any, style?: string): void;
+    group(name: string, groupMsg: Group[]): void;
     constructor();
 }
