@@ -10,6 +10,7 @@
 // This is the structure of the confiration of this 
 // module
 //
+
 /*
 interface configuration{
 	allowLog: boolean,
@@ -47,7 +48,7 @@ export class JTLog {
 	default:string = "color:black; font-size:11px;";
 	error:string = "color:red;font-size:11px;";
 	warn:string = "color:orange; font-size:11px;";
-	info:string = "color:yellow; font-size:11px;";
+	info:string = "color:#6f1a07; font-size:11px;";
 	call:string = "color:green; font-size:11px;";
 	file:string = "color:blue; font-size:11px;";
 
@@ -81,13 +82,16 @@ export class JTLog {
 				// To swich according to the tag
 				switch(tag){
 					case "table":
-						console.table("%c" + msg, this.table + style);
+						console.table( msg);
 					break;
 					case "default":
 						console.log("%c" + msg, this.default + style);
 					break;
 					case "warn":
 						console.warn("%cWarn: " + msg, this.warn + style);
+					break;
+					case "error":
+						console.error("cErro: " + msg, this.error + style);
 					break;
 					case "info":
 						console.info("%cInfo: " + msg, this.info + style);
@@ -111,11 +115,49 @@ export class JTLog {
 								   });
 						start.push({	
 										tag: "startBold" , 
-										msg: "%cApp Name: " + msg + 
-											 "%cTime of Starting: " + this.config["appStartTime"]  
+										msg: "%cApp Name: " + msg + "\n" +
+											 "%cApp Starting Time: " + this.config["appStartTime"] + "\n\n" 
 										,
 										style:  style
 									});
+						start.push({
+										tag: "info",
+										msg: "This is how info will be printed.",
+										style: ""
+						})
+						start.push({
+										tag: "warn",
+										msg: "This is how warring will be printed.",
+										style: ""
+						})
+						start.push({
+										tag: "error",
+										msg: "This is how error will be printed.",
+										style: ""
+						})
+						start.push({
+										tag: "file",
+										msg: "This will indicate change in file.",
+										style: ""
+						})
+						start.push({
+										tag: "call",
+										msg: "This will indicate calling of a function.",
+										style: ""
+						})
+						start.push({
+										tag: "default",
+										msg: "This will the default log.",
+										style: ""
+						})
+						start.push({
+										tag: "table",
+										msg: { 
+													Index1: "value",
+													Index2: "value 2"
+											},
+										style: ""
+						})
 						start.push({	
 										tag: "startBold" , 
 										msg: "%c" + "-----------------------------------",
