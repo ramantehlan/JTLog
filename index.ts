@@ -43,7 +43,7 @@ export class JTLog {
 
 
 	// Tags style for logs
-	startBold:string = "color:gray; font-size:10px;";
+	startBold:string = "color:gray; font-size:13px;font-weight:bold;";
 	table:string = "color:green; font-size:11px;";
 	default:string = "color:black; font-size:11px;";
 	error:string = "color:red;font-size:11px;";
@@ -91,7 +91,7 @@ export class JTLog {
 						console.warn("%cWarn: " + msg, this.warn + style);
 					break;
 					case "error":
-						console.error("cErro: " + msg, this.error + style);
+						console.error("%cErro: " + msg, this.error + style);
 					break;
 					case "info":
 						console.info("%cInfo: " + msg, this.info + style);
@@ -110,16 +110,21 @@ export class JTLog {
 						let start: Group[] = [];
 						start.push({	
 										tag: "startBold" , 
-										msg: "%c" + "------------------------------------",
-										style:  style
+										msg: "--------------------------------------------------",
+										style:  ""
 								   });
 						start.push({	
 										tag: "startBold" , 
-										msg: "%cApp Name: " + msg + "\n" +
-											 "%cApp Starting Time: " + this.config["appStartTime"] + "\n\n" 
+										msg: "App Name: " + msg + "\n" +
+											 "App Starting Time: " + this.config["appStartTime"]
 										,
-										style:  style
+										style:  ""
 									});
+						start.push({	
+										tag: "startBold" , 
+										msg: "--------------------------------------------------",
+										style:  ""
+								   });
 						start.push({
 										tag: "info",
 										msg: "This is how info will be printed.",
@@ -147,7 +152,7 @@ export class JTLog {
 						})
 						start.push({
 										tag: "default",
-										msg: "This will the default log.",
+										msg: "This will be the default log.",
 										style: ""
 						})
 						start.push({
@@ -160,7 +165,7 @@ export class JTLog {
 						})
 						start.push({	
 										tag: "startBold" , 
-										msg: "%c" + "-----------------------------------",
+										msg: "--------------------------------------------------",
 										style: style
 								   });
 
@@ -181,7 +186,7 @@ export class JTLog {
 	// To print a group 
 	// 
 	public group(name: string, groupMsg: Group[]){
-		console.group(name);
+		console.groupCollapsed(name);
 			// To get print the n memebers of groupMsg
 			for(let pos = 0; pos < groupMsg.length; pos++){
 				this.log(groupMsg[pos].tag , groupMsg[pos].msg, groupMsg[pos].style);

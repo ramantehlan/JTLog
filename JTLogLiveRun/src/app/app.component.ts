@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'Testing';
 
   constructor(J:JTLog){
-  	J.log("sdf","testing");
+  	J.log("start","JTLogLiveRun");
   }
 
 }
