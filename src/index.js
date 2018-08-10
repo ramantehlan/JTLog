@@ -110,7 +110,8 @@ var JTLog = /** @class */ (function () {
                     start.push({
                         tag: "startBold",
                         msg: "App Name: " + msg + "\n" +
-                            "App Starting Time: " + this.config["appStartTime"],
+                            "App Starting Time: " + this.config["appStartTime"] + "\n" +
+                            "JTLog Version: " + "1.3.3",
                         style: ""
                     });
                     start.push({
