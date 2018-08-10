@@ -42,7 +42,7 @@ var JTLog = /** @class */ (function () {
             appStartTime: new Date().toLocaleString()
         };
         // Tags style for logs
-        this.startBold = "color:gray; font-size:10px;";
+        this.startBold = "color:gray; font-size:13px;font-weight:bold;";
         this.table = "color:green; font-size:11px;";
         this.default = "color:black; font-size:11px;";
         this.error = "color:red;font-size:11px;";
@@ -86,7 +86,7 @@ var JTLog = /** @class */ (function () {
                     console.warn("%cWarn: " + msg, this.warn + style);
                     break;
                 case "error":
-                    console.error("cErro: " + msg, this.error + style);
+                    console.error("%cErro: " + msg, this.error + style);
                     break;
                 case "info":
                     console.info("%cInfo: " + msg, this.info + style);
@@ -104,14 +104,19 @@ var JTLog = /** @class */ (function () {
                     var start = [];
                     start.push({
                         tag: "startBold",
-                        msg: "%c" + "------------------------------------",
-                        style: style
+                        msg: "--------------------------------------------------",
+                        style: ""
                     });
                     start.push({
                         tag: "startBold",
-                        msg: "%cApp Name: " + msg + "\n" +
-                            "%cApp Starting Time: " + this.config["appStartTime"] + "\n\n",
-                        style: style
+                        msg: "App Name: " + msg + "\n" +
+                            "App Starting Time: " + this.config["appStartTime"],
+                        style: ""
+                    });
+                    start.push({
+                        tag: "startBold",
+                        msg: "--------------------------------------------------",
+                        style: ""
                     });
                     start.push({
                         tag: "info",
@@ -140,7 +145,7 @@ var JTLog = /** @class */ (function () {
                     });
                     start.push({
                         tag: "default",
-                        msg: "This will the default log.",
+                        msg: "This will be the default log.",
                         style: ""
                     });
                     start.push({
@@ -153,7 +158,7 @@ var JTLog = /** @class */ (function () {
                     });
                     start.push({
                         tag: "startBold",
-                        msg: "%c" + "-----------------------------------",
+                        msg: "--------------------------------------------------",
                         style: style
                     });
                     this.group("JTLog Started", start);
@@ -172,7 +177,7 @@ var JTLog = /** @class */ (function () {
     // To print a group 
     // 
     JTLog.prototype.group = function (name, groupMsg) {
-        console.group(name);
+        console.groupCollapsed(name);
         // To get print the n memebers of groupMsg
         for (var pos = 0; pos < groupMsg.length; pos++) {
             this.log(groupMsg[pos].tag, groupMsg[pos].msg, groupMsg[pos].style);
