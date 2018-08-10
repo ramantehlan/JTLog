@@ -76,7 +76,7 @@ No | Tag | Description3
 4 | info | Print Information 
 5 | start | Print Starting Heading
 6 | call | Print when a function is called
-7 | head | Print when a file is opened 
+7 | file | Print when a file is opened 
 
 ## Test 
 ```sh
