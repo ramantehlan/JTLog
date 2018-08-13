@@ -195,6 +195,9 @@ export class JTLog {
 		console.groupEnd();
 	}
 
+	// 
+	// To record the logs
+	// 
 
     constructor() { 
     }
