@@ -38,8 +38,11 @@ export class JTLog {
 		allowLog : true,
 		pageName : "Default",
 		appName : null,
-		appStartTime: new Date().toLocaleString()
+		appStartTime: new Date().toLocaleString(),
+		allowRecoding: true
 	}
+	// To record 
+	History: {tag: string, msg: any}[] = [];
 
 
 	// Tags style for logs
@@ -179,6 +182,8 @@ export class JTLog {
 						console.log('%c' + msg , this.default + style);
 					break;
 				}
+				
+				this.record(tag, msg);
 			// Over
 		}
 	}
@@ -198,8 +203,20 @@ export class JTLog {
 	// 
 	// To record the logs
 	// 
+	public record(tag: string, msg: any){
+		this.History.push({tag, msg});
+	}
+
+	// 
+	// To Print the records
+	//
+	public printRecord(){
+		console.log("This is to print History | For now I am just checking");
+		console.log(this.History);
+	}
 
     constructor() { 
+
     }
 
 }

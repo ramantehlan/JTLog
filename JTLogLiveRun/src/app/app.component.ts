@@ -10,7 +10,11 @@ export class AppComponent {
   title = 'Testing';
 
   constructor(J:JTLog){
-  	J.log("start","JTLogLiveRun");
+    J.log("start","JTLogLiveRun");
+    J.log("default", "This is for testing! ");
+    J.log("error","This is a sample error! ");
+
+    J.printRecord();
   }
 
 }
