@@ -88,13 +88,13 @@ export class JTLog {
 						console.log("%c" + msg, this.default + style);
 					break;
 					case "warn":
-						console.warn("%cWarn: " + msg, this.warn + style);
+						console.warn("%cWarning: " + msg, this.warn + style);
 					break;
 					case "error":
-						console.error("%cErro: " + msg, this.error + style);
+						console.error("%cError: " + msg, this.error + style);
 					break;
 					case "info":
-						console.info("%cInfo: " + msg, this.info + style);
+						console.info("%cInformation: " + msg, this.info + style);
 					break;
 					case "file":
 						console.log("%cFile: " + msg, this.file + style);
