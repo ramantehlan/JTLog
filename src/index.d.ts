@@ -14,6 +14,11 @@ export declare class JTLog {
     config: {
         [x: string]: any;
     };
+    History: {
+        tag: string;
+        msg: any;
+        time: any;
+    }[];
     startBold: string;
     table: string;
     default: string;
@@ -25,7 +30,10 @@ export declare class JTLog {
     setConfig(name: string, value: any): void;
     getConfig(name: string): any;
     clear(): void;
+    action(tag: string, msg: any, style?: string): void;
     log(tag: string, msg: any, style?: string): void;
     group(name: string, groupMsg: Group[]): void;
+    record(tag: string, msg: any, time: any): void;
+    printRecord(): void;
     constructor();
 }
