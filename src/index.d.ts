@@ -10,15 +10,16 @@ export declare class Group {
     msg: any;
     style: string;
 }
+export declare class History {
+    tag: string;
+    msg: any;
+    time: any;
+}
 export declare class JTLog {
     config: {
         [x: string]: any;
     };
-    History: {
-        tag: string;
-        msg: any;
-        time: any;
-    }[];
+    logRecords: History[];
     startBold: string;
     table: string;
     default: string;
@@ -35,5 +36,6 @@ export declare class JTLog {
     group(name: string, groupMsg: Group[]): void;
     record(tag: string, msg: any, time: any): void;
     printRecord(): void;
+    getLogRecord(): History[];
     constructor();
 }

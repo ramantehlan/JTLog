@@ -27,8 +27,8 @@ export class Group{
 // a history object
 //
 export class History{
-	tag: string = "", 
-	msg: any = "", 
+	tag: string = ""; 
+	msg: any = ""; 
 	time: any = ""}
 
 // 

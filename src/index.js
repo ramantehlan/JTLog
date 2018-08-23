@@ -11,12 +11,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // This is the structure of the confiration of this 
 // module
 //
-/*
-interface configuration{
-    allowLog: boolean,
-    pageName: string
-}
-*/
 //
 // This is the strucutre of a group, which is used
 // in printing a group in console
@@ -29,6 +23,19 @@ var Group = /** @class */ (function () {
     return Group;
 }());
 exports.Group = Group;
+// 
+// Class to represent the structure of 
+// a history object
+//
+var History = /** @class */ (function () {
+    function History() {
+        this.tag = "";
+        this.msg = "";
+        this.time = "";
+    }
+    return History;
+}());
+exports.History = History;
 // 
 // This is the main class that will be used to print logs
 // 
@@ -43,7 +50,7 @@ var JTLog = /** @class */ (function () {
             appStartTime: new Date().toLocaleString()
         };
         // To record 
-        this.History = [];
+        this.logRecords = [];
         // Tags style for logs
         this.startBold = "color:gray; font-size:13px;font-weight:bold;";
         this.table = "color:green; font-size:11px;";
@@ -156,14 +163,20 @@ var JTLog = /** @class */ (function () {
     // To record the logs
     // 
     JTLog.prototype.record = function (tag, msg, time) {
-        this.History.push({ tag: tag, msg: msg, time: time });
+        this.logRecords.push({ tag: tag, msg: msg, time: time });
     };
     // 
     // To Print the records
     //
     JTLog.prototype.printRecord = function () {
-        console.log("%c** Printing History **", "color:gray; font-size:13px;font-weight:bold;");
-        console.table(this.History);
+        console.log("%c** Printing Log Records **", "color:gray; font-size:13px;font-weight:bold;");
+        console.table(this.logRecords);
+    };
+    // 
+    // To return the array of log records
+    // 
+    JTLog.prototype.getLogRecord = function () {
+        return this.logRecords;
     };
     return JTLog;
 }());
