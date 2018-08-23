@@ -94,13 +94,32 @@ No | Tag | Description3
 7 | file | Print when a file is opened, also chances the fileName.
 8 | error | Print a error 
 
+## File Structure 
+
+```Bash
+JTLog
+|
+├── src
+│   ├── index.d.ts
+│   └── index.js
+├── test
+│   └── test.js
+├── art/..
+├── node_modules/...
+├── index.ts
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── README.md
+└── tsconfig.json
+```
 
 ## Contribution
     Feel free to contribute.
 
 ## Licence
 
-Copyright 2018 Raman Tehlan <Ramantehlan[at]gmail.com>
+Copyright 2018 [Raman Tehlan]("https://ramantehlan.github.io") < Ramantehlan@gmail.com >
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 
