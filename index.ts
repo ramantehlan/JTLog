@@ -36,13 +36,13 @@ export class JTLog {
 	// This is the configuration for JTLog
 	config: {[x: string]: any} = {
 		allowLog : true,
-		allowRecoding: true,
+		allowRecording: true,
 		pageName : "Default",
 		appName : null,
 		appStartTime: new Date().toLocaleString()
 	}
 	// To record 
-	History: {tag: string, msg: any, time: Date}[] = [];
+	History: {tag: string, msg: any, time: any}[] = [];
 
 
 	// Tags style for logs
@@ -124,49 +124,6 @@ export class JTLog {
 								msg: "--------------------------------------------------",
 								style:  ""
 						   });
-				start.push({
-								tag: "info",
-								msg: "This is how info will be printed.",
-								style: ""
-				})
-				start.push({
-								tag: "warn",
-								msg: "This is how warring will be printed.",
-								style: ""
-				})
-				start.push({
-								tag: "error",
-								msg: "This is how error will be printed.",
-								style: ""
-				})
-				start.push({
-								tag: "file",
-								msg: "This will indicate change in file.",
-								style: ""
-				})
-				start.push({
-								tag: "call",
-								msg: "This will indicate calling of a function.",
-								style: ""
-				})
-				start.push({
-								tag: "default",
-								msg: "This will be the default log.",
-								style: ""
-				})
-				start.push({
-								tag: "table",
-								msg: { 
-											Index1: "value",
-											Index2: "value 2"
-									},
-								style: ""
-				})
-				start.push({	
-								tag: "startBold" , 
-								msg: "--------------------------------------------------",
-								style: style
-						   });
 
 				this.group("JTLog Started", start);
 			break;
@@ -182,11 +139,13 @@ export class JTLog {
 
 	// To push the log to console
 	public log(tag: string, msg: any , style: string = ""): void{
-		if(this.config["allowLog"]){
+		//To Print the logs
+		if(this.config["allowLog"])
 			this.action(tag, msg, style);
-		}
-		if(this.config["allowRecording"]){
-				this.record(tag, msg);
+		//To Record the logs
+		if(this.config["allowRecording"] && tag != "start"){
+				let currentTime = new Date().toLocaleString()
+				this.record(tag, msg, currentTime);
 		}
 
 	}
@@ -206,8 +165,8 @@ export class JTLog {
 	// 
 	// To record the logs
 	// 
-	public record(tag: string, msg: any){
-		this.History.push({tag, msg});
+	public record(tag: string, msg: any, time: any ){
+		this.History.push({tag, msg, time});
 	}
 
 	// 
@@ -215,7 +174,7 @@ export class JTLog {
 	//
 	public printRecord(){
 		console.log("This is to print History | For now I am just checking");
-		console.log(this.History);
+		console.table(this.History);
 	}
 
     constructor() { 
