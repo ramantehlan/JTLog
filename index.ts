@@ -11,12 +11,6 @@
 // module
 //
 
-/*
-interface configuration{
-	allowLog: boolean,
-	pageName: string
-}
-*/
 
 //
 // This is the strucutre of a group, which is used
@@ -27,6 +21,15 @@ export class Group{
 	msg: any;
 	style: string = "";
 }
+
+// 
+// Class to represent the structure of 
+// a history object
+//
+export class History{
+	tag: string = "", 
+	msg: any = "", 
+	time: any = ""}
 
 // 
 // This is the main class that will be used to print logs
@@ -42,7 +45,7 @@ export class JTLog {
 		appStartTime: new Date().toLocaleString()
 	}
 	// To record 
-	History: {tag: string, msg: any, time: any}[] = [];
+	logRecords: History[] = [];
 
 
 	// Tags style for logs
@@ -76,7 +79,7 @@ export class JTLog {
 		console.clear();
 	}
 
-	public action(tag: string, msg: any , style: string = ""){
+	action(tag: string, msg: any , style: string = ""){
 		// To swich according to the tag
 		switch(tag){
 			case "table":
@@ -153,7 +156,7 @@ export class JTLog {
 	//
 	// To print a group 
 	// 
-	public group(name: string, groupMsg: Group[]){
+	group(name: string, groupMsg: Group[]){
 		console.groupCollapsed(name);
 			// To get print the n memebers of groupMsg
 			for(let pos = 0; pos < groupMsg.length; pos++){
@@ -165,17 +168,24 @@ export class JTLog {
 	// 
 	// To record the logs
 	// 
-	public record(tag: string, msg: any, time: any ){
-		this.History.push({tag, msg, time});
+	record(tag: string, msg: any, time: any ){
+		this.logRecords.push({tag, msg, time});
 	}
 
 	// 
 	// To Print the records
 	//
-	public printRecord(){
-		console.log("This is to print History | For now I am just checking");
-		console.table(this.History);
+	printRecord(){
+		console.log("%c** Printing Log Records **", "color:gray; font-size:13px;font-weight:bold;");
+		console.table(this.logRecords);
 	}
+
+	// 
+	// To return the array of log records
+	// 
+	public getLogRecord() : History[] {
+		return this.logRecords;
+	} 
 
     constructor() { 
 
