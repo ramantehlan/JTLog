@@ -4,6 +4,13 @@
 
 JavascriptTypescriptLog (JTLog) is Log library.
 
+## Features 
+
+- Simple Console logging.
+- Record/Store console logs for a particular session, return it in an array.
+- 2 Modes for development and production (Won't be visible to users).
+- Switch between consoling and recording, or choose both.
+
 ## Installation 
 
 ```sh
