@@ -1,5 +1,5 @@
 
-<img src="https://github.com/ramantehlan/JTLog/blob/develop/art/JTLog.png" width="120px">
+<img src="https://raw.githubusercontent.com/ramantehlan/JTLog/develop/art/JTLog.png" width="120px">
 
 # JTLog
 
@@ -96,7 +96,7 @@ No | Tag | Description3
 
 ## File Structure 
 
-```Bash
+```
 JTLog
 |
 ├── src
