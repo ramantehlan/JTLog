@@ -1,3 +1,6 @@
+
+<img src="./art/JTLog.png" width="120px">
+
 # JTLog
 
 [![Build Status](https://travis-ci.org/ramantehlan/JTLog.svg?branch=master)](https://travis-ci.org/ramantehlan/JTLog)
