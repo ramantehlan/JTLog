@@ -3,7 +3,10 @@
 
 # JTLog
 
-[![Build Status](https://travis-ci.org/ramantehlan/JTLog.svg?branch=master)](https://travis-ci.org/ramantehlan/JTLog)
+[![npm version](https://badge.fury.io/js/jtlog.svg)](https://badge.fury.io/js/jtlog)
+  [![npm](https://img.shields.io/npm/dm/jtlog.svg)](https://www.npmjs.com/package/jtlog)
+ [![Build Status](https://travis-ci.org/ramantehlan/JTLog.svg?branch=master)](https://travis-ci.org/ramantehlan/JTLog)
+ [![NpmLicense](https://img.shields.io/npm/l/jtlog.svg)](https://www.npmjs.com/package/jtlog)
 
 JavascriptTypescriptLog (JTLog) is Log library.
 
