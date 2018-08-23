@@ -1,5 +1,5 @@
 
-<img src="./art/JTLog.png" width="120px">
+<img src="https://github.com/ramantehlan/JTLog/blob/develop/art/JTLog.png" width="120px">
 
 # JTLog
 
@@ -36,6 +36,7 @@ JTLog.log("start", "App Started");
 ```
 
 ### General
+
 ```Typescript
 // To start the module 
 // appname will be replaced by your program/app name
@@ -62,6 +63,9 @@ JT.log('default',"App started", "color:black");
 // In case you add wrong tag, this won't be a problem.
 //
 
+
+// To get the array of log history/record 
+let record: any = JT.getLogRecord();
 ```
 
 > Note: JT is a module variable, It will be different for you, as you assign it.
@@ -71,9 +75,10 @@ JT.log('default',"App started", "color:black");
 No | Name | Type | Description |
 ---|------|------|-------------|
 1  | allowLog | `Boolean` | To decide if you wish to log or not
-2  | fileName | `String` | To set file name of current page we are on. 
-3  | appName  | `String` | Name of app, it is set by user
-4  | appStartTime | `String` | Time when app started
+2  | allowRecording | `Boolean` | To allow recording of logs
+3  | pageName | `String` | To set file name of current page we are on. 
+4  | appName  | `String` | Name of app, it is set by user
+5  | appStartTime | `String` | Time when app started
 
 
 ## Tag List
@@ -89,10 +94,6 @@ No | Tag | Description3
 7 | file | Print when a file is opened, also chances the fileName.
 8 | error | Print a error 
 
-## Test 
-```sh
-npm run test
-```
 
 ## Contribution
     Feel free to contribute.
