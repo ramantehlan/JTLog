@@ -1,8 +1,18 @@
+
+<img src="https://raw.githubusercontent.com/ramantehlan/JTLog/develop/art/JTLog.png" width="120px">
+
 # JTLog
 
 [![Build Status](https://travis-ci.org/ramantehlan/JTLog.svg?branch=master)](https://travis-ci.org/ramantehlan/JTLog)
 
 JavascriptTypescriptLog (JTLog) is Log library.
+
+## Features 
+
+- Simple Console logging.
+- Record/Store console logs for a particular session, return it in an array.
+- 2 Modes for development and production (Won't be visible to users).
+- Switch between consoling and recording, or choose both.
 
 ## Installation 
 
@@ -26,6 +36,7 @@ JTLog.log("start", "App Started");
 ```
 
 ### General
+
 ```Typescript
 // To start the module 
 // appname will be replaced by your program/app name
@@ -52,6 +63,9 @@ JT.log('default',"App started", "color:black");
 // In case you add wrong tag, this won't be a problem.
 //
 
+
+// To get the array of log history/record 
+let record: any = JT.getLogRecord();
 ```
 
 > Note: JT is a module variable, It will be different for you, as you assign it.
@@ -61,9 +75,10 @@ JT.log('default',"App started", "color:black");
 No | Name | Type | Description |
 ---|------|------|-------------|
 1  | allowLog | `Boolean` | To decide if you wish to log or not
-2  | fileName | `String` | To set file name of current page we are on. 
-3  | appName  | `String` | Name of app, it is set by user
-4  | appStartTime | `String` | Time when app started
+2  | allowRecording | `Boolean` | To allow recording of logs
+3  | pageName | `String` | To set file name of current page we are on. 
+4  | appName  | `String` | Name of app, it is set by user
+5  | appStartTime | `String` | Time when app started
 
 
 ## Tag List
@@ -79,9 +94,24 @@ No | Tag | Description3
 7 | file | Print when a file is opened, also chances the fileName.
 8 | error | Print a error 
 
-## Test 
-```sh
-npm run test
+## File Structure 
+
+```
+JTLog
+|
+├── src
+│   ├── index.d.ts
+│   └── index.js
+├── test
+│   └── test.js
+├── art/..
+├── node_modules/...
+├── index.ts
+├── LICENSE
+├── package.json
+├── package-lock.json
+├── README.md
+└── tsconfig.json
 ```
 
 ## Contribution
@@ -89,7 +119,7 @@ npm run test
 
 ## Licence
 
-Copyright 2018 Raman Tehlan <Ramantehlan[at]gmail.com>
+Copyright 2018 [Raman Tehlan](https://ramantehlan.github.io/) < Ramantehlan@gmail.com >
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 
